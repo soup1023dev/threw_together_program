@@ -1,4 +1,5 @@
 # python hello Tutorial.
+# ゆっくり内容を理解してみてね！
 import random
 import matplotlib.pyplot as plt
 a = "h"
