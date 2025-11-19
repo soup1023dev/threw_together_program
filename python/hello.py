@@ -34,4 +34,4 @@ print(u)
 
 # end=======
 #last
-app=Flask(__name__); app.route("/")(lambda: "Hello World"); app.run(debug=True)
+app=Flask('hello world'); app.route("/")(lambda: "Hello World"); app.run(debug=True)
