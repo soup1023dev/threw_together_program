@@ -4,6 +4,7 @@ import random
 import matplotlib.pyplot as plt
 import pandas as pd
 import torch,torch.nn as nn
+from flask import Flask
 a = "h"
 b = "e"
 c = "l"
@@ -32,3 +33,5 @@ for _ in range(11):p,h=m(torch.tensor([[i]]),h);i=torch.argmax(p[0,0]).item();u+
 print(u)
 
 # end=======
+#last
+app=Flask(__name__); app.route("/")(lambda: "Hello World"); app.run(debug=True)
