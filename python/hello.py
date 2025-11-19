@@ -33,5 +33,8 @@ for _ in range(11):p,h=m(torch.tensor([[i]]),h);i=torch.argmax(p[0,0]).item();u+
 print(u)
 
 # end=======
-#last
+#This must be placed at the very end of the code. Since it’s blocking, if you add another blocking call, you should add threading.
 app=Flask('hello world'); app.route("/")(lambda: "Hello World"); app.run(debug=True)
+
+#By the way, I’m about to start working on the WIP one, so I might leave this aside for a while.
+#I’ll continue it when I feel like it. The technical side is fine anyway, and it’s fun, so I might update it periodically.
