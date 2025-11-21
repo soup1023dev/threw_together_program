@@ -1,0 +1,15 @@
+from PIL import Image;import numpy as np;D =[(0,0,1<<0),(1,0,1<<1),(2,0,1<<2),(0,1,1<<3),(1,1,1<<4),(2,1,1<<5),(0,2,1<<6),(1,2,1<<7)]
+def image_to_braille(p,a=200,b=200,h=128):
+    c,d=Image.open(p).convert("L").resize((a,b)).size;print("size(w/h)="+str(c-(c%2))+","+str(d-(d%4)));pixels=np.array(Image.open(p).convert("L").resize((a,b)).crop((0,0,c-(c%2),d-(d%4))));output_lines = []
+    for y in range(0, d - (d % 4), 4):
+        line = ""
+        for x in range(0, c - (c % 2) , 2):
+            o=0
+            for j,k,t in D:
+                if y+j<d-(d%4)and x+k<c-(c%2) :
+                    if pixels[y+j,x+k]<h:o|=t
+            char = chr(0x2800 + o);line += char
+        output_lines.append(line)
+    return "\n".join(output_lines)
+photo="name.jpg"
+ascii_braille = image_to_braille(photo, 400, 628);print(Image.open(photo).convert("L").size);print(ascii_braille)
