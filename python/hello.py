@@ -1,5 +1,6 @@
 # python hello Tutorial.
 # ゆっくり内容を理解してみてね！
+#!!!Depending on the versions of matplotlib and numpy, it might not work, but please handle any issues on your end.!!!
 import random
 import matplotlib.pyplot as plt
 import pandas as pd
